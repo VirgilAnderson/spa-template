@@ -58,7 +58,7 @@ npm install
 Add the url of the project to the hosts file. NOTE: UI and backend MUST run on the same top level domain for Sanctum to work.
 
 ```
-    sudo vim /etc/hosts
+sudo vim /etc/hosts
 ```
 
 Modify the vue.config.js file to match your domain name
