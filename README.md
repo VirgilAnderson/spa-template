@@ -1,6 +1,6 @@
 # spa-template
 
-This isa template for creating SPA projects using laravel on the backend and Vue.js on the front end. The idea is to keep the SPA contained within but separate from the backend so that it can be changed if necessary. This build includes the following packages:
+This is a template for creating SPA projects using laravel on the backend and Vue.js on the front end. The idea is to keep the SPA contained within but separate from the backend so that it can be changed if necessary. This build includes the following packages:
 
 Backend:
 
