@@ -31,10 +31,29 @@ git clone git@github.com:VirgilAnderson/spa-template.git
 Install the composer dependencies
 
 ```
+cd spa_template
 composer install
 ```
 
-### Update the .env file
+Generate your app key
+
+```
+php artisan key:generate
+```
+
+### Create & update the .env file
+
+Create the .env file
+
+```
+cp .env.example .env
+```
+
+Set the app url
+
+```
+APP_URL=http://spa_template.test
+```
 
 Create a database and update the .env files to match
 
@@ -96,15 +115,23 @@ Add the following to the hosts file:
 127.0.0.1   spa_template.test
 ```
 
+Update the axios config to use your new route (Login.vue & Dashboard.vue)
+
+```
+axios.defaults.baseURL = 'http://test_spa.test'
+``
 Modify the vue.config.js file to match your domain name
 
 ```
+
 module.exports = {
-    devServer: {
-        host: 'spa_template.test'
-    }
+devServer: {
+host: 'spa_template.test'
 }
+}
+
 ```
 
 Visit spa_template.test to view the backend laravel app
 Visit spa_template.test:8080 to view the frontend vue app
+```
