@@ -20,6 +20,8 @@ Frontend UI:
 
 ## Installation
 
+### Basic Install
+
 Clone the project into a directory
 
 ```
@@ -32,6 +34,8 @@ Install the composer dependencies
 composer install
 ```
 
+### Update the .env file
+
 Create a database and update the .env files to match
 
 ```
@@ -43,7 +47,20 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Migrate the database
+Update the .env files for Sanctum
+
+```
+SESSION_DOMAIN=.spa_template.test
+SANCTUM_STATEFUL_DOMAINS=spa_template.test:8080
+```
+
+Update the .env file for debugbar
+
+```
+DEBUGBAR_ENABLED=true
+```
+
+### Migrate the database
 
 ```
 php artisan migrate
@@ -57,6 +74,8 @@ $user = User::factory()->create()
 $user->password = bcrypt('password');
 $user->save();
 ```
+
+### Build the UI
 
 Install the npm dependencies for the ui
 
