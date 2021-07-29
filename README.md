@@ -134,7 +134,3 @@ module.exports = {
 
 Visit spa_template.test to view the backend laravel app
 Visit spa_template.test:8080 to view the frontend vue app
-
-```
-
-```
