@@ -35,18 +35,18 @@ cd spa_template
 composer install
 ```
 
-Generate your app key
-
-```
-php artisan key:generate
-```
-
 ### Create & update the .env file
 
 Create the .env file
 
 ```
 cp .env.example .env
+```
+
+Generate your app key
+
+```
+php artisan key:generate
 ```
 
 Set the app url
