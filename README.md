@@ -119,19 +119,22 @@ Update the axios config to use your new route (Login.vue & Dashboard.vue)
 
 ```
 axios.defaults.baseURL = 'http://test_spa.test'
-``
+```
+
 Modify the vue.config.js file to match your domain name
 
 ```
-
 module.exports = {
-devServer: {
-host: 'spa_template.test'
-}
+    devServer: {
+        host: 'spa_template.test'
+    }
 }
 
 ```
 
 Visit spa_template.test to view the backend laravel app
 Visit spa_template.test:8080 to view the frontend vue app
+
+```
+
 ```
