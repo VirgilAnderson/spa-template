@@ -37,6 +37,7 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () =>
             import(/* webpackPrefetch: 0,  webpackChunkName: "dashboard" */ "../views/Dashboard.vue"),
+        meta: { requiresAuth: true },
     },
 ];
 
