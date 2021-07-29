@@ -49,6 +49,15 @@ Migrate the database
 php artisan migrate
 ```
 
+Seed the database with a user
+
+```
+php artisan tinker
+$user = User::factory()->create()
+$user->password = bcrypt('password');
+$user->save();
+```
+
 Install the npm dependencies for the ui
 
 ```
@@ -62,6 +71,12 @@ Add the url of the project to the hosts file. NOTE: UI and backend MUST run on t
 sudo vim /etc/hosts
 ```
 
+Add the following to the hosts file:
+
+```
+127.0.0.1   spa_template.test
+```
+
 Modify the vue.config.js file to match your domain name
 
 ```
@@ -71,3 +86,6 @@ module.exports = {
     }
 }
 ```
+
+Visit spa_template.test to view the backend laravel app
+Visit spa_template.test:8080 to view the frontend vue app
