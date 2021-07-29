@@ -6,19 +6,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import axios from "axios"
 axios.defaults.withCredentials = true
 axios.defaults.baseURL = 'http://spa_template.test'
 
 export default {
     name: 'dashboard',
-    computed: {
-        ...mapGetters({
-        authenticated: 'auth/authenticated',
-        user: 'auth/user',
-        })
-    },
     data() {
         return {
             name: '',
@@ -28,15 +21,11 @@ export default {
 
     },
     mounted() {
-        if(this.$store.getters['auth/authenticated']){
-            axios.get('api/user').then(response => {
-                this.name = response.data.name
-            }).catch(error => {
-                console.log(error)
-            })
-        }
-        
-
+        axios.get('api/user').then(response => {
+            this.name = response.data.name
+        }).catch(error => {
+            console.log(error)
+        })
     }
 }
 </script>
