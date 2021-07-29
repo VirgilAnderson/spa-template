@@ -8,7 +8,8 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-
+import axios from "axios";
+axios.defaults.withCredentials = true;
 export default {
     name: "Home",
     components: {

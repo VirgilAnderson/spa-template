@@ -16,6 +16,7 @@ Frontend UI:
 -   Vue Router
 -   Vuex
 -   Eslint
+-   Axios
 
 ## Installation
 
