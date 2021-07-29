@@ -1,10 +1,23 @@
 <template>
     <div>
-        <h1>This is the Login page</h1>
-		<input type="text" v-model="email" placeholder="email">
-		<input type="password" v-model="password" placeholder="password">
-		<button @click="login">Login</button>
-		<p v-if="errorMessage">{{ errorMessage }}</p>
+        <h1>Login</h1>
+		<div>
+			<div>
+				<label for="email">Email address</label>
+				<input type="text" name="email" id="email" v-model="email">
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" v-model="password">
+			</div>
+			<div>
+			<button @click="login">
+				Sign in
+			</button>
+			<p v-if="errorMessage">{{ errorMessage }}</p>
+			</div>
+		</div>
+		
     </div>
 </template>
 
@@ -42,7 +55,6 @@ export default {
 				}).catch(error => {
 					const key = Object.keys(error.response.data.errors)[0]
 					this.errorMessage = error.response.data.errors[key][0]
-					// console.log(error)
 				})
 			});
 		},
