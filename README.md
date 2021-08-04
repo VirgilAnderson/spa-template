@@ -103,6 +103,18 @@ cd ui
 npm install
 ```
 
+Create a .env file
+
+```
+touch .env
+```
+
+Add base url to .env
+
+```
+VUE_APP_BASE_URL=http://spa_template.test
+```
+
 Add the url of the project to the hosts file. NOTE: UI and backend MUST run on the same top level domain for Sanctum to work.
 
 ```
