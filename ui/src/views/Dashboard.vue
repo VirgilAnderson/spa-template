@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import api from '../services/api'
+import api from "../services/api"
 
 export default {
-    name: 'dashboard',
+    name: "dashboard",
     data() {
         return {
             name: '',
@@ -19,7 +19,7 @@ export default {
 
     },
     mounted() {
-        api.get('api/user').then(response => {
+        api.get("/user").then(response => {
             this.name = response.data.name
         }).catch()
     }

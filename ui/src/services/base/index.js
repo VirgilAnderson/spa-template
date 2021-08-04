@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://spa_template.test'
+const baseURL = process.env.VUE_APP_BASE_URL
 
 const base = axios.create({
     baseURL,
