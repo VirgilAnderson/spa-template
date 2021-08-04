@@ -1,6 +1,4 @@
-import axios from 'axios'
-axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'http://spa_template.test'
+import api from '../modules/api'
 
 export default {
     namespaced: true,
@@ -32,20 +30,20 @@ export default {
 
     actions: {
         async login({ dispatch }, credentials) {
-            await axios.get('/sanctum/csrf-cookie')
-            await axios.post('/login', credentials)
+            await api.get('/sanctum/csrf-cookie')
+            await api.post('/login', credentials)
 
             return dispatch('me')
         },
 
         async logout({ dispatch }) {
-            await axios.post('/logout')
+            await api.post('/logout')
 
             return dispatch('me')
         },
 
         me({ commit }) {
-            return axios.get('/api/user').then((response) => {
+            return api.get('/api/user').then((response) => {
                 commit('SET_AUTHENTICATED', true)
                 commit('SET_USER', response.data)
             }).catch(() => {

@@ -6,9 +6,7 @@
 </template>
 
 <script>
-import axios from "axios"
-axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'http://spa_template.test'
+import api from "../modules/api"
 
 export default {
     name: 'dashboard',
@@ -21,7 +19,7 @@ export default {
 
     },
     mounted() {
-        axios.get('api/user').then(response => {
+        api.get('api/user').then(response => {
             this.name = response.data.name
         }).catch(error => {
             console.log(error)
