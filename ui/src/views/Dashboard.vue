@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import api from "../modules/api"
+import api from "../services/api"
 
 export default {
-    name: 'dashboard',
+    name: "dashboard",
     data() {
         return {
             name: '',
@@ -19,11 +19,9 @@ export default {
 
     },
     mounted() {
-        api.get('api/user').then(response => {
+        api.get("/user").then(response => {
             this.name = response.data.name
-        }).catch(error => {
-            console.log(error)
-        })
+        }).catch()
     }
 }
 </script>

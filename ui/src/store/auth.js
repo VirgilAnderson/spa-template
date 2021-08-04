@@ -1,4 +1,4 @@
-import api from '../modules/api'
+import base from '../services/base'
 
 export default {
     namespaced: true,
@@ -30,20 +30,20 @@ export default {
 
     actions: {
         async login({ dispatch }, credentials) {
-            await api.get('/sanctum/csrf-cookie')
-            await api.post('/login', credentials)
+            await base.get('/sanctum/csrf-cookie')
+            await base.post('/login', credentials)
 
             return dispatch('me')
         },
 
         async logout({ dispatch }) {
-            await api.post('/logout')
+            await base.post('/logout')
 
             return dispatch('me')
         },
 
         me({ commit }) {
-            return api.get('/api/user').then((response) => {
+            return base.get('/api/user').then((response) => {
                 commit('SET_AUTHENTICATED', true)
                 commit('SET_USER', response.data)
             }).catch(() => {
