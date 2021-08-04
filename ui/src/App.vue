@@ -5,7 +5,7 @@
             <router-link to="/about">About</router-link> |
             <router-link v-if="authenticated" to="/dashboard">Dashboard</router-link><span v-if="authenticated"> | </span>
             <router-link v-if="!authenticated" to="/login">Login</router-link>
-            <a href="#" v-if="authenticated" @click.prevent="logout">Sign out</a>
+            <a href="#" v-if="authenticated" @click.prevent="logout">Logout</a>
         </div>
         <router-view />
     </div>
